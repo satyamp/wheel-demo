@@ -1,0 +1,44 @@
+!!! 5
+head
+    meta(charset='utf-8')
+    title DoingSomething HTML5 ad
+    link(rel='stylesheet', href='css/style.css')
+    script(src='js/lib/modernizr.min.js')
+
+    :coffeescript
+        #if !Modernizr.geolocation then alert 'Geolocation not available'
+
+    script
+        (function(g,b,d){var c=b.head||b.getElementsByTagName('head'),D='readyState',E='onreadystatechange',F='DOMContentLoaded',G='addEventListener',H=setTimeout;;
+            function f(){
+                $LAB
+                    .script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+                    .script('js/lib/underscore.min.js').wait()
+                    .script('js/client.min.js').wait(function(){
+                        $(function(){
+                            new DoingAd();
+                        });
+                    });
+            }
+        H(function(){if('item'in c){if(!c[0]){H(arguments.callee,25);return}c=c[0]}var a=b.createElement('script'),e=false;a.onload=a[E]=function(){if((a[D]&&a[D]!=='complete'&&a[D]!=='loaded')||e){return false}a.onload=a[E]=null;e=true;f()};
+        a.src='js/lib/LAB.min.js';
+        c.insertBefore(a,c.firstChild)},0);if(b[D]==null&&b[G]){b[D]='loading';b[G](F,d=function(){b.removeEventListener(F,d,false);b[D]='complete'},false)}})(this,document);		
+
+    body
+        #fb-root
+        .container
+            p: a#spin(href='#') Spin
+            p: a#expand(href='#') Expand
+            #viewable
+                img#wheel.spinner(src='img/wheel.png')
+                ul#somethings.spinner.unstyled.show_1(data-showing='1')
+                    li 1. fly kites in the park
+                    li 2. fly kites in the park
+                    li 3. fly kites in the park
+                    li 4. fly kites in the park
+                    li 5. fly kites in the park
+                    li 6. fly kites in the park
+                    li 7. fly kites in the park
+                    li 8. fly kites in the park
+                    li 9. fly kites in the park
+                    li 10. fly kites in the park

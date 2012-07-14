@@ -1,0 +1,163 @@
+!!! 5
+head
+    meta(charset='utf-8')
+    title DoingSomething HTML5 ad
+    link(rel='stylesheet', href='//fast.fonts.com/cssapi/90d3598d-8b26-4eb6-941c-809f9f1c072d.css')
+    link(rel='stylesheet', href='css/style.css')
+    script(src='js/lib/modernizr.min.js')
+
+    script
+        (function(g,b,d){var c=b.head||b.getElementsByTagName('head'),D='readyState',E='onreadystatechange',F='DOMContentLoaded',G='addEventListener',H=setTimeout;;
+            function f(){
+                $LAB
+                    .script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+                    .script('js/lib/twitter.min.js')
+                    .script('js/lib/underscore.min.js').wait()
+                    .script('js/client.min.js').wait(function(){
+                        $(function(){
+                            new DoingAd();
+                        });
+                    });
+            }
+        H(function(){if('item'in c){if(!c[0]){H(arguments.callee,25);return}c=c[0]}var a=b.createElement('script'),e=false;a.onload=a[E]=function(){if((a[D]&&a[D]!=='complete'&&a[D]!=='loaded')||e){return false}a.onload=a[E]=null;e=true;f()};
+        a.src='js/lib/LAB.min.js';
+        c.insertBefore(a,c.firstChild)},0);if(b[D]==null&&b[G]){b[D]='loading';b[G](F,d=function(){b.removeEventListener(F,d,false);b[D]='complete'},false)}})(this,document);		
+
+body
+    #banner
+        img#switch_off.switch(src='img/switch_off.png')
+        img#switch_on.hidden.switch(src='img/switch_on.png')
+        #viewable
+            #twitter
+            #twitter_inner
+                h2 Visit Tate Britain by boat
+                p.blue See which Twitter friends are online and suggest Doing Something this evening
+                p#prize You will win a boat
+                #not_tweet
+                    #twits
+                        #twitname
+                            form
+                                input(type='text', placeholder='Enter Twitter username')
+                                button(type='submit') Search
+                        #friends
+                        .friend.cloneable.hidden
+                            p: a(href='#'): img(src='#')
+                            p.friend_name.blue
+                    p#logo: a(href='http://www.doingsomething.co.uk/', target='_blank'): img(src='img/logo.png')
+                #tweet.hidden
+                    #avatar.tweet_col
+                        img(src='#')
+                    .tweet_col
+                        #speech_bubble
+                            #tweet_text.blue
+                    .tweet_col
+                        p: a#send_tweet(href='#') Send
+            img#bg_switch(src='img/bg_switch.png')
+            img#pointer(src='img/pointer.png')
+            #wheel.show_0
+                #seg_19.segment
+                    .content.font_stylish(data-font='stylish')
+                        p Swap some clothes at Swaparamarazzmatazz
+                    .triangle
+                    .divider
+                #seg_18.segment
+                    .content.font_elegant(data-font='elegant')
+                        p Take a candlelit tour of the Sir John Soane's Museum
+                    .triangle
+                    .divider
+                #seg_17.segment
+                    .content.font_modern(data-font='modern')
+                        p Visit Tate Britain by Boat
+                    .triangle
+                    .divider
+                #seg_16.segment
+                    .content.font_old(data-font='old')
+                        p Ogle the Art Deco at Eltham Palace
+                    .triangle
+                    .divider
+                #seg_15.segment
+                    .content.font_stylish(data-font='stylish')
+                        p See a short at the Rooftop Film Club
+                    .triangle
+                    .divider
+                #seg_14.segment
+                    .content.font_elegant(data-font='elegant')
+                        p Have an ice cream experience at Gelupo
+                    .triangle
+                    .divider
+                #seg_13.segment
+                    .content.font_modern(data-font='modern')
+                        p Check out the School of Life Sunday Sermon
+                    .triangle
+                    .divider
+                #seg_12.segment
+                    .content.font_old(data-font='old')
+                        p Visit historic maritime Greenwich
+                    .triangle
+                    .divider
+                #seg_11.segment
+                    .content.font_stylish(data-font='stylish')
+                        p Do some drawing at the Pub Art Club
+                    .triangle
+                    .divider
+                #seg_10.segment
+                    .content.font_elegant(data-font='elegant')
+                        p Take a walk through St James Park
+                    .triangle
+                    .divider
+                #seg_9.segment
+                    .content.font_modern(data-font='modern')
+                        p Catch a classic at the British Film Institute
+                    .triangle
+                    .divider
+                #seg_8.segment
+                    .content.font_old(data-font='old')
+                        p Follow the East End Murder Mystery Trail
+                    .triangle
+                    .divider
+                #seg_7.segment
+                    .content.font_stylish(data-font='stylish')
+                        p Visit the fashion galleries at the V&A
+                    .triangle
+                    .divider
+                #seg_6.segment
+                    .content.font_elegant(data-font='elegant')
+                        p Shop for macaroons at Laduree
+                    .triangle
+                    .divider
+                #seg_5.segment
+                    .content.font_modern(data-font='modern')
+                        p Play Underground Rebel Bingo
+                    .triangle
+                    .divider
+                #seg_4.segment
+                    .content.font_old(data-font='old')
+                        p See the Beefeaters at the Tower of London
+                    .triangle
+                    .divider
+                #seg_3.segment
+                    .content.font_stylish(data-font='stylish')
+                        p Spot street style in Carnaby Street
+                    .triangle
+                    .divider
+                #seg_2.segment
+                    .content.font_elegant(data-font='elegant')
+                        p Take tea at the Ritz
+                    .triangle
+                    .divider
+                #seg_1.segment
+                    #let_wheel.content.bother
+                        p &laquo; Let the wheel decide your fate
+                    .content.font_modern.unbother.hidden(data-font='modern')
+                        p Catch a film at Secret Cinema
+                    .triangle
+                    .divider
+                #seg_0.segment
+                    #fancy_ds.content.bother
+                        p Do you fancy <span>interesting tonight?</span>
+                        img(src='img/logo.png')
+                    .content.font_old.unbother.hidden(data-font='old')
+                        p Get frightened at the London Dungeon
+                    .triangle
+                    .divider
+

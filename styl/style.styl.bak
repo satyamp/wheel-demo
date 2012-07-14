@@ -1,0 +1,103 @@
+@import nib
+@import '/var/www/stylus/reset'
+@import '/var/www/stylus/framework'
+
+#viewable
+	abs 200px, auto, auto, 100px
+	block 718px, 81px
+	overflow hidden
+	border 1px solid #ccc
+	transition all 1s cubic-bezier(.16,.63,.4,.99)
+	&.expanded
+		height 300px
+
+.spinner
+	abs 50%, auto, auto, 50px
+	transition all 5s cubic-bezier(.16,.63,.4,.99)
+	&.show_1
+		transform rotate(0deg)
+	&.show_2
+		transform rotate(-3636deg)
+	&.show_3
+		transform rotate(-72deg)
+	&.show_4
+		transform rotate(-108deg)
+	&.show_5
+		transform rotate(-3744deg)
+	&.show_6
+		transform rotate(-180deg)
+	&.show_7
+		transform rotate(3384deg)
+	&.show_8
+		transform rotate(-248deg)
+	&.show_9
+		transform rotate(3316deg)
+	&.show_10
+		transform rotate(-320deg)
+
+#somethings
+	abs 50%, auto, auto, 50px
+	transform-origin top left
+	transition all 5s cubic-bezier(.16,.63,.4,.99)
+	&.show_1
+		transform rotate(0deg)
+	&.show_2
+		transform rotate(-3636deg)
+	&.show_3
+		transform rotate(-72deg)
+	&.show_4
+		transform rotate(-108deg)
+	&.show_5
+		transform rotate(-3744deg)
+	&.show_6
+		transform rotate(-180deg)
+	&.show_7
+		transform rotate(3384deg)
+	&.show_8
+		transform rotate(-248deg)
+	&.show_9
+		transform rotate(3316deg)
+	&.show_10
+		transform rotate(-320deg)
+	li
+		lh 0.1em
+		size 200%
+		width 350px
+		backface-visibility hidden
+		transform-origin center left
+		position absolute
+		&:nth-child(1)
+			transform rotate(0deg) translate(100px) 
+			font-family times
+		&:nth-child(2)
+			transform rotate(36deg) translate(100px) 
+			font-family georgia
+		&:nth-child(3)
+			transform rotate(72deg) translate(100px) 
+			font-family impact
+		&:nth-child(4)
+			transform rotate(108deg) translate(100px)
+			font-family 'american typewriter'
+		&:nth-child(5)
+			transform rotate(144deg) translate(100px)
+			font-family 'comic cans ms'
+		&:nth-child(6)
+			transform rotate(180deg) translate(100px)
+			font-family monaco
+		&:nth-child(7)
+			transform rotate(216deg) translate(100px)
+			font-family verdana
+		&:nth-child(8)
+			transform rotate(248deg) translate(100px)
+			font-family baskerville
+		&:nth-child(9)
+			transform rotate(284deg) translate(100px)
+			font-family optima
+		&:nth-child(10)
+			transform rotate(320deg) translate(100px)
+			font-family 'marker felt'
+
+#wheel
+	abs 50%, auto, auto, 50%
+	margin -500px 0 0 -707px
+	transform-origin center center

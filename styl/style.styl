@@ -1,0 +1,264 @@
+@import nib
+global-reset()
+
+seg_0 = -85deg
+rotation = 18
+seg_width = 800px
+
+colors = (0 #fcf0e0) (1 #fc6d58) (2 #3f9149) (3 #5cd0e0) (4 #fcd925) (5 #03b845) (6 #8f0f80) (7 #fc35aa) (8 #b5f032) (9 #fc6d58) (10 #1cd9a6) (11 #def01f) (12 #fca932) (13 #3f659a) (14 #e2d62c) (15 #ea1c53) (16 #5cd0e0) (17 #fca932) (18 #1cd9a6) (19 #c3d49e)
+
+rotate_seg(segment)
+	seg_0 + (segment * rotation)
+
+segment_color(segment)
+	return color[1] if color[0] == segment for color in colors 
+
+rotate_wheel(segment)
+	if even(segment)
+		rotate_seg(segment) - 181deg
+	else
+		rotate_seg(segment) + 179deg
+
+font_old()
+	font-family 'Goudy Text MT W01'
+
+font_modern()
+	font-family 'Gill Display Cm W00'
+
+font_elegant()
+	font-family 'Sugar Pie W00 Regular'
+
+font_stylish()
+	font-family 'AvantGardeGothicITCW01B 731063'
+
+font_body()
+	font-family 'NovecentoW00-WideUltraB'
+
+body
+	font_body()
+
+strong
+	font-weight bold
+
+.font_old
+	font_old()
+	p
+		font-size 140% !important
+		line-height 0.5em
+
+.font_modern
+	font_modern()
+	p
+		font-size 140% !important
+		line-height 0.5em
+
+.font_elegant
+	font_elegant()
+
+.font_stylish
+	font_stylish()
+
+#banner
+	relative()
+	width 728px
+	padding 10px 0
+
+#viewable
+	relative()
+	display block
+	width 728px
+	height 79px
+	overflow hidden
+	transition all 1s cubic-bezier(.16,.63,.4,.99)
+	&.expanded
+		height 450px
+
+.switch
+	absolute top 50% left 12px
+	z-index 9999
+
+#switch_off
+	margin-top -24px
+	cursor pointer
+
+#switch_on
+	margin-top -43px
+
+#bg_switch
+	absolute top 50% left 0
+	margin-top -111px
+	z-index 999
+
+#fancy_ds
+	font-family 'UniversLTW01-49LightUlt'
+	color #44525b !important
+	font-size 175% !important
+	top 240px !important
+	text-transform uppercase
+	img
+		absolute top 0px left 100px
+		margin-top -15px
+	span
+		margin-left 150px
+
+#pointer
+	absolute top 50% left 0
+	margin-top -35px
+	z-index 999
+
+#twitter_inner
+	color #fff
+	text-algin center
+	width 450px
+	margin-left 207px
+	padding-top 70px
+	absolute()
+	z-index 99
+	&.foreground
+		z-index 999
+	h2
+		margin-bottom 30px
+		font-size 180%
+		padding 0 15px
+	p
+		margin-bottom 30px
+		line-height 1.3em
+		font-size 110%
+	img
+		display inline-block
+	.blue
+		color #44525b
+	#twitname
+		width 335px
+		display inline-block
+		background rgba(#000, 0.15)
+		border-radius 6px
+		padding 5px
+		margin-bottom 30px
+		form
+			text-align left
+			background url(../img/bg_input.png) no-repeat left top
+			input
+				font_body()
+				margin 5px 35px 5px 5px
+				height 25px
+				width 210px
+				padding 2px
+				font-size 75%
+				border none
+				background none
+				display inline-block
+				&:focus
+					outline none
+			button
+				font_body()
+				font-size 75%
+				border none
+				display inline-block
+				background none
+				color #fff
+				width 65px
+
+#logo
+	margin-top 15px
+
+#twits
+	height 75px
+
+#friends
+	.friend
+		cursor pointer
+		display inline-block
+		margin 5px
+		p
+			margin 0
+		.friend_name
+			transition 0.5s ease-out
+			font-size 60%
+#tweet
+	.tweet_col
+		margin-right 10px
+		float left
+	#avatar
+		width 51px
+	#speech_bubble
+		background url(../img/bg_speech.png) no-repeat left 15px
+		width 240px
+		padding-left 10px
+	#tweet_text
+		padding 10px
+		border-radius 6px
+		background #fff
+		text-align left
+		min-height 100px
+		width 220px
+		font normal 80% / 1.3em arial, helvetica, sans-serif
+	#send_tweet
+		background url(../img/bg_submit.png) no-repeat left top
+		padding 7px 40px 10px 10px
+		color #fff
+		text-decoration none
+		display inline-block
+
+#prize
+	font-size 90% !important
+	margin-bottom 15px !important
+
+#twitter
+	display block
+	width 728px
+	height 480px
+	absolute top 0px right 0px
+	z-index 9
+	for num in 0..19
+		&.showing_{num}
+			background-image -webkit-radial-gradient(center, ellipse cover, lighten(desaturate(segment_color(num), 50%), 20) 0%, segment_color(num) 100%)
+			background-image -moz-radial-gradient(center, ellipse cover, lighten(desaturate(segment_color(num), 50%), 20) 0%, segment_color(num) 100%)
+			background-image -ms-radial-gradient(center, ellipse cover, lighten(desaturate(segment_color(num), 50%), 20) 0%, segment_color(num) 100%)
+			background-image -o-radial-gradient(center, ellipse cover, lighten(desaturate(segment_color(num), 50%), 20) 0%, segment_color(num) 100%)
+
+#wheel
+	backface-visibility hidden
+	margin-top -268px
+	absolute top 50% left 53px
+	z-index 99
+	display block
+	height 1600px
+	width 1600px
+	transform-origin 0% 17%
+	transition all 5s cubic-bezier(.16,.63,.4,.99)
+	.segment
+		backface-visibility hidden
+		transition all 1s ease-in
+		opacity 1
+		transform-origin bottom left
+		absolute()
+		.content
+			font-size 130%
+			color #fff
+			relative top 230px left 200px
+			transform-origin bottom left
+			transform rotate(rotation / -2deg)
+			z-index 999
+		.triangle
+			backface-visibility hidden
+			border-style solid
+			border-width 0 0 250px seg_width
+			border-color transparent
+			width 0
+			height 0
+		.divider
+			width seg_width
+			height 10px
+			background #f9dfb3
+		&.invis
+			opacity 0
+	for num in 0..19
+		&.show_{num}
+			transform rotate(rotate_wheel(20 - num))
+		#seg_{num}
+			transform rotate(rotate_seg(num)) 
+			.content p
+				text-shadow 1px 1px 10px darken(segment_color(num), 10)
+			.triangle
+				border-bottom-color segment_color(num)
